@@ -18,8 +18,19 @@ public class Evaluator {
         int incrementRank = 1;
         int beforeRank = 0;
         boolean firstWasA = false;
+        boolean sameRank = false;
 
         for (Card card : cardList) {
+
+            if (card.getRank() == 1 ) {
+                firstWasA = true;
+            }
+
+            if (beforeRank == card.getRank()) {
+                sameRank = true;
+            } else {
+                sameRank = false;
+            }
 
             if (tempMap.containsKey(card.getSuit())) {
                 Integer count = tempMap.get(card.getSuit());
@@ -28,9 +39,6 @@ public class Evaluator {
                 if (beforeRank == 0) {
                     // 이전 카드를 현재 카드로 갱신
                     beforeRank = card.getRank();
-                    if (card.getRank() == 1 ) {
-                        firstWasA = true;
-                    }
                 } else {
                     if (beforeRank + 1 == card.getRank()) {
                         // 덱의 전 숫자와 현재숫자가 1 차이로 증가할 시 incrementRank 1 증가시킴
@@ -44,35 +52,30 @@ public class Evaluator {
                 beforeRank = card.getRank();
             }
 
-            System.out.println( );
-            // TRIPLE 구현부분 - 최승환
-            if (tempMap.containsValue(card.getRank())) {
-                if (beforeRank == 0) {
-                    beforeRank = card.getRank();
-                } else {
-                    // 덱의 시작부터 끝까지 전 숫자와 현재 숫자가 같을 시 continuousRank 1 증가시킴
-                    if (beforeRank == card.getRank()) {
-                        continuousRank++;
-                        beforeRank = card.getRank();
-                    }
-                }
-            }
         }
 
-        // FLUSH 검사 부분에서 incrementRank를 추가로 검사하여 5에 해당할 시 스트레이트 플러시, 아니면 일반 플러시로 return함.
+
         for (Suit key : tempMap.keySet()) {
+            // 세개의 카드를 확인하고 이들이 동일한 Rank를 가졌을 때 TRIPLE return.
+            if (tempMap.size() == 3 && sameRank) {
+                return "TRIPLE";
+            }
+
+            // FLUSH 검사 부분에서 incrementRank가 5, 첫 Rank가 A 일시 백 스트레이트 플러시
+            // 아닌 경우 스트레이트 플러시, 그것도 아니면 일반 플러시로 return함.
             if (tempMap.get(key) == 5) {
                 if (incrementRank == 5) {
-                    return "STRAIGHTFLUSH";
+                    if (firstWasA) {
+                        return "BACKSTRAIGHTFLUSH";
+                    } else {
+                        return "STRAIGHTFLUSH";
+                    }
                 } else {
                     return "FLUSH";
                 }
             }
         }
-
-        if (continuousRank == 3) {
-            return "TRIPLE";
-        }
+        
         return "NOTHING";
     }
 }

@@ -50,7 +50,7 @@ public class EvaluatorTest {
                 new Card(5, Suit.CLUBS)
         );
         String result = evaluator.evaluate(cardList);
-        assertThat(result, is("STRAIGHTFLUSH"));
+        assertThat(result, is("BACKSTRAIGHTFLUSH"));
     }
 
 
