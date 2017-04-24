@@ -15,41 +15,52 @@ public class Evaluator {
     public String evaluate(List<Card> cardList) {
         Map<Suit, Integer> tempMap = new HashMap<Suit, Integer>();
         int continuousRank = 1;
-        int currentRank, beforeRank = 0;
+        int incrementRank = 1;
+        int beforeRank = 0;
 
         for (Card card : cardList) {
+
             if (tempMap.containsKey(card.getSuit())) {
                 Integer count = tempMap.get(card.getSuit());
                 count = new Integer(count.intValue() + 1);
                 tempMap.put(card.getSuit(), count);
+                if (beforeRank == 0) {
+                    beforeRank = card.getRank();
+                } else {
+                    if (beforeRank + 1 == card.getRank()) {
+                        // 덱의 전 숫자와 현재숫자가 1 차이로 증가할 시 incrementRank 1 증가시킴
+                        incrementRank++;
+                    }
+                    beforeRank = card.getRank();
+                }
 
             } else {
                 tempMap.put(card.getSuit(), new Integer(1));
             }
 
+            System.out.println( );
             // TRIPLE 구현부분 - 최승환
             if (tempMap.containsValue(card.getRank())) {
                 if (beforeRank == 0) {
                     beforeRank = card.getRank();
                 } else {
+                    // 덱의 시작부터 끝까지 전 숫자와 현재 숫자가 같을 시 continuousRank 1 증가시킴
                     if (beforeRank == card.getRank()) {
                         continuousRank++;
+                        beforeRank = card.getRank();
                     }
                 }
             }
-
-            //System.out.println("Output : " + tempMap.get("TEST : " + tempMap.get("DIAMONDS")));
         }
 
+        // FLUSH 검사 부분에서 incrementRank를 추가로 검사하여 5에 해당할 시 스트레이트 플러시, 아니면 일반 플러시로 return함.
         for (Suit key : tempMap.keySet()) {
             if (tempMap.get(key) == 5) {
-                return "FLUSH";
-            }
-        }
-
-        for (Suit key : tempMap.keySet()) {
-            if (tempMap.get(key) == 5) {
-                return "STRAIGHTFLUSH";
+                if (incrementRank == 5) {
+                    return "STRAIGHTFLUSH";
+                } else {
+                    return "FLUSH";
+                }
             }
         }
 
