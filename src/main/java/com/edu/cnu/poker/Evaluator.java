@@ -6,12 +6,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.edu.cnu.poker.Suit.DIAMONDS;
+
 /**
  * Created by cse on 2017-04-17.
  */
 public class Evaluator {
     public String evaluate(List<Card> cardList) {
         Map<Suit, Integer> tempMap = new HashMap<Suit, Integer>();
+        int continuousRank = 1;
+        int currentRank, beforeRank = 0;
 
         for (Card card : cardList) {
             if (tempMap.containsKey(card.getSuit())) {
@@ -23,7 +27,18 @@ public class Evaluator {
                 tempMap.put(card.getSuit(), new Integer(1));
             }
 
-            System.out.println("tempMap.keySet() : " + tempMap.keySet());
+            // TRIPLE 구현부분 - 최승환
+            if (tempMap.containsValue(card.getRank())) {
+                if (beforeRank == 0) {
+                    beforeRank = card.getRank();
+                } else {
+                    if (beforeRank == card.getRank()) {
+                        continuousRank++;
+                    }
+                }
+            }
+
+            //System.out.println("Output : " + tempMap.get("TEST : " + tempMap.get("DIAMONDS")));
         }
 
         for (Suit key : tempMap.keySet()) {
@@ -38,10 +53,8 @@ public class Evaluator {
             }
         }
 
-        for (Integer key : tempMap.values()) {
-            if (tempMap.get(key) == 3) {
-                return "TRIPLE";
-            }
+        if (continuousRank == 3) {
+            return "TRIPLE";
         }
         return "NOTHING";
     }
