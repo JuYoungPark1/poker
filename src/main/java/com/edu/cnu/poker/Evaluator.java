@@ -17,6 +17,7 @@ public class Evaluator {
         int continuousRank = 1;
         int incrementRank = 1;
         int beforeRank = 0;
+        boolean firstWasA = false;
 
         for (Card card : cardList) {
 
@@ -25,7 +26,11 @@ public class Evaluator {
                 count = new Integer(count.intValue() + 1);
                 tempMap.put(card.getSuit(), count);
                 if (beforeRank == 0) {
+                    // 이전 카드를 현재 카드로 갱신
                     beforeRank = card.getRank();
+                    if (card.getRank() == 1 ) {
+                        firstWasA = true;
+                    }
                 } else {
                     if (beforeRank + 1 == card.getRank()) {
                         // 덱의 전 숫자와 현재숫자가 1 차이로 증가할 시 incrementRank 1 증가시킴
@@ -36,6 +41,7 @@ public class Evaluator {
 
             } else {
                 tempMap.put(card.getSuit(), new Integer(1));
+                beforeRank = card.getRank();
             }
 
             System.out.println( );

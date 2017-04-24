@@ -24,8 +24,23 @@ public class EvaluatorTest {
         String result = evaluator.evaluate(cardList);
         assertThat(result, is("TRIPLE"));
     }
+
     @Test
     public void 숫자가_연속되고_SUIT가_5개가동일하면_스트레이트플러쉬다(){
+        Evaluator evaluator = new Evaluator();
+        List<Card> cardList = Arrays.asList(
+                new Card(3, Suit.CLUBS),
+                new Card(4, Suit.CLUBS),
+                new Card(5, Suit.CLUBS),
+                new Card(6, Suit.CLUBS),
+                new Card(7, Suit.CLUBS)
+        );
+        String result = evaluator.evaluate(cardList);
+        assertThat(result, is("STRAIGHTFLUSH"));
+    }
+
+    @Test
+    public void 숫자가_A부터시작돼_연속되고_SUIT가_5개가동일하면_백스트레이트플러쉬다(){
         Evaluator evaluator = new Evaluator();
         List<Card> cardList = Arrays.asList(
                 new Card(1, Suit.CLUBS),
@@ -37,6 +52,8 @@ public class EvaluatorTest {
         String result = evaluator.evaluate(cardList);
         assertThat(result, is("STRAIGHTFLUSH"));
     }
+
+
     @Test
     public void SUIT가_5개가동일하면_플러쉬다() {
         Evaluator evaluator = new Evaluator();
