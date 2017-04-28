@@ -163,4 +163,5 @@ public class EvaluatorTest {
         String result = evaluator.evaluate(cardList);
         assertThat(result, is("STRAIGHT"));
     }
+
 }

@@ -65,6 +65,13 @@ public class Evaluator {
 
             } else {
                 tempMap.put(card.getSuit(), new Integer(1));
+                if(beforeRank == 0){
+                    beforeRank = card.getRank();
+                }
+                else if (beforeRank + 1 == card.getRank()) {
+                    // 덱의 전 숫자와 현재숫자가 1 차이로 증가할 시 incrementRank 1 증가시킴
+                    incrementRank++;
+                }
                 beforeRank = card.getRank();
             }
             cardOrder++;
@@ -92,6 +99,8 @@ public class Evaluator {
             }
             else if(o_count == 2){
                 return "TWO_PAIR";
+            } else if(o_count == 1) {
+                return "ONE_PAIR";
             }
         }
 
@@ -118,7 +127,9 @@ public class Evaluator {
                 }
             }
         }
-        
+        if(incrementRank == 5){
+            return "STRAIGHT";
+        }
         return "TOP";
     }
 }
