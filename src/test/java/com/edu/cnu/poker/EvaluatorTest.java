@@ -109,5 +109,18 @@ public class EvaluatorTest {
         assertThat(result, is("TWO_PAIR"));
     }
 
+    @Test
+    public void 숫자2개가_1번_같고_숫자3개가_같으면_풀하우스다() {
+        Evaluator evaluator = new Evaluator();
+        List<Card> cardList = Arrays.asList(
+                new Card(4,Suit.CLUBS),
+                new Card(5,Suit.SPADES),
+                new Card(5,Suit.DIAMONDS),
+                new Card(5,Suit.HEARTS),
+                new Card(4,Suit.DIAMONDS)
+        );
+        String result = evaluator.evaluate(cardList);
+        assertThat(result, is("FULL_HOUSE"));
+    }
 
 }
