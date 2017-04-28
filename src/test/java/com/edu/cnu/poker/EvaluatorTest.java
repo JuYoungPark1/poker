@@ -150,4 +150,17 @@ public class EvaluatorTest {
         String result = evaluator.evaluate(cardList);
         assertThat(result, is("TOP"));
     }
+    @Test
+    public void 숫자가_연속되게_실행되면_스트레이트이다(){
+        Evaluator evaluator = new Evaluator();
+        List<Card> cardList = Arrays.asList(
+                new Card(3, Suit.DIAMONDS),
+                new Card(4, Suit.SPADES),
+                new Card(5, Suit.HEARTS),
+                new Card(6, Suit.SPADES),
+                new Card(7, Suit.CLUBS)
+        );
+        String result = evaluator.evaluate(cardList);
+        assertThat(result, is("STRAIGHT"));
+    }
 }
