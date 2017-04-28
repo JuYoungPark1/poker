@@ -128,7 +128,11 @@ public class Evaluator {
             }
         }
         if(incrementRank == 5){
-            return "STRAIGHT";
+            if(firstWasA){
+                return "BACKSTRAIGHT";
+            } else {
+                return "STRAIGHT";
+            }
         }
         return "TOP";
     }
