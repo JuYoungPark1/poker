@@ -20,11 +20,15 @@ public class Evaluator {
         int beforeRank = 0;
         boolean firstWasA = false;
         boolean sameRank = false;
+        boolean firstWasTEN = false;
+        boolean rotipleCheck = false;
 
         for (Card card : cardList) {
 
             if (card.getRank() == 1 ) {
                 firstWasA = true;
+            } else if (card.getRank() == 10) {
+                firstWasTEN = true;
             }
 
             if (beforeRank == card.getRank()) {
@@ -51,6 +55,9 @@ public class Evaluator {
                     if (beforeRank + 1 == card.getRank()) {
                         // 덱의 전 숫자와 현재숫자가 1 차이로 증가할 시 incrementRank 1 증가시킴
                         incrementRank++;
+                    } else if (beforeRank - 12 == card.getRank()) {
+                        // 전 숫자가 13이고 현재 숫자가 1일 때
+                        rotipleCheck = true;
                     }
                     beforeRank = card.getRank();
                 }
@@ -100,7 +107,12 @@ public class Evaluator {
                     } else {
                         return "STRAIGHTFLUSH";
                     }
-                } else {
+                } else if(incrementRank == 4) {
+                    if (firstWasTEN && rotipleCheck) {
+                        return "ROYALSTRAIGHTFLUSH";
+                    }
+                }
+                else {
                     return "FLUSH";
                 }
             }

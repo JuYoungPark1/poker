@@ -123,4 +123,17 @@ public class EvaluatorTest {
         assertThat(result, is("FULL_HOUSE"));
     }
 
+    @Test
+    public void SUIT가_5개동일하고_숫자가_10_J_Q_K_A가_연달아있으면_로티플이다() {
+        Evaluator evaluator = new Evaluator();
+        List<Card> cardList = Arrays.asList(
+                new Card(10, Suit.SPADES),
+                new Card(11, Suit.SPADES),
+                new Card(12, Suit.SPADES),
+                new Card(13, Suit.SPADES),
+                new Card(1, Suit.SPADES)
+        );
+        String result = evaluator.evaluate(cardList);
+        assertThat(result, is("ROYALSTRAIGHTFLUSH"));
+    }
 }
