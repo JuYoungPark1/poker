@@ -176,5 +176,18 @@ public class EvaluatorTest {
         String result = evaluator.evaluate(cardList);
         assertThat(result, is("BACKSTRAIGHT"));
     }
+    @Test
+    public void 숫자가_10부터시작돼_연속이면_마운틴이다(){
+        Evaluator evaluator = new Evaluator();
+        List<Card> cardList = Arrays.asList(
+                new Card(10, Suit.DIAMONDS),
+                new Card(11, Suit.SPADES),
+                new Card(12, Suit.HEARTS),
+                new Card(13, Suit.SPADES),
+                new Card(1, Suit.CLUBS)
+        );
+        String result = evaluator.evaluate(cardList);
+        assertThat(result, is("MOUNTAIN"));
+    }
 
 }

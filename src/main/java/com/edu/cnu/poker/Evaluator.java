@@ -67,12 +67,15 @@ public class Evaluator {
                 tempMap.put(card.getSuit(), new Integer(1));
                 if(beforeRank == 0){
                     beforeRank = card.getRank();
+                } else {
+                    if (beforeRank + 1 == card.getRank()) {
+                        // 덱의 전 숫자와 현재숫자가 1 차이로 증가할 시 incrementRank 1 증가시킴
+                        incrementRank++;
+                    } else if (beforeRank - 12 == card.getRank()){
+                        rotipleCheck = true;
+                    }
+                    beforeRank = card.getRank();
                 }
-                else if (beforeRank + 1 == card.getRank()) {
-                    // 덱의 전 숫자와 현재숫자가 1 차이로 증가할 시 incrementRank 1 증가시킴
-                    incrementRank++;
-                }
-                beforeRank = card.getRank();
             }
             cardOrder++;
         }
@@ -132,6 +135,10 @@ public class Evaluator {
                 return "BACKSTRAIGHT";
             } else {
                 return "STRAIGHT";
+            }
+        } else if(incrementRank == 4) {
+            if (firstWasTEN && rotipleCheck) {
+                return "MOUNTAIN";
             }
         }
         return "TOP";
