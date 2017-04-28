@@ -95,7 +95,19 @@ public class EvaluatorTest {
         String result = evaluator.evaluate(cardList);
         assertThat(result, is("ONE_PAIR"));
     }
-
+    @Test
+    public void 숫자2개가_2번_같으면_투페어다() {
+        Evaluator evaluator = new Evaluator();
+        List<Card> cardList = Arrays.asList(
+                new Card(4,Suit.CLUBS),
+                new Card(4,Suit.SPADES),
+                new Card(5,Suit.DIAMONDS),
+                new Card(5,Suit.HEARTS),
+                new Card(7,Suit.DIAMONDS)
+        );
+        String result = evaluator.evaluate(cardList);
+        assertThat(result, is("TWO_PAIR"));
+    }
 
 
 }
