@@ -136,4 +136,18 @@ public class EvaluatorTest {
         String result = evaluator.evaluate(cardList);
         assertThat(result, is("ROYALSTRAIGHTFLUSH"));
     }
+
+    @Test
+    public void 아무런_패도_없으면_탑이다() {
+        Evaluator evaluator = new Evaluator();
+        List<Card> cardList = Arrays.asList(
+                new Card(4, Suit.HEARTS),
+                new Card(11, Suit.SPADES),
+                new Card(7, Suit.CLUBS),
+                new Card(13, Suit.SPADES),
+                new Card(1, Suit.SPADES)
+        );
+        String result = evaluator.evaluate(cardList);
+        assertThat(result, is("TOP"));
+    }
 }

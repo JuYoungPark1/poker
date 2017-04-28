@@ -22,12 +22,14 @@ public class Evaluator {
         boolean sameRank = false;
         boolean firstWasTEN = false;
         boolean rotipleCheck = false;
+        boolean topCheck = false;
 
         for (Card card : cardList) {
+            int cardOrder = 1; // 현재 몇번째 카드인지 구분하기 위함
 
-            if (card.getRank() == 1 ) {
+            if (card.getRank() == 1 && cardOrder == 1) {
                 firstWasA = true;
-            } else if (card.getRank() == 10) {
+            } else if (card.getRank() == 10 && cardOrder == 1) {
                 firstWasTEN = true;
             }
 
@@ -56,7 +58,7 @@ public class Evaluator {
                         // 덱의 전 숫자와 현재숫자가 1 차이로 증가할 시 incrementRank 1 증가시킴
                         incrementRank++;
                     } else if (beforeRank - 12 == card.getRank()) {
-                        // 전 숫자가 13이고 현재 숫자가 1일 때
+                        // 전 숫자가 13(K)이고 현재 숫자가 1일 때
                         rotipleCheck = true;
                     }
                     beforeRank = card.getRank();
@@ -66,7 +68,7 @@ public class Evaluator {
                 tempMap.put(card.getSuit(), new Integer(1));
                 beforeRank = card.getRank();
             }
-
+            cardOrder++;
         }
         for(Integer rank : tempMap2.keySet()){
             Integer o_count = 0; //원페어의 갯수
@@ -91,6 +93,8 @@ public class Evaluator {
             }
             else if(o_count == 2){
                 return "TWO_PAIR";
+            } else {
+                topCheck = true;
             }
         }
 
@@ -115,6 +119,8 @@ public class Evaluator {
                 else {
                     return "FLUSH";
                 }
+            } else if(topCheck) {
+                return "TOP";
             }
         }
         

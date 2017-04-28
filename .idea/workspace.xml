@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d710660-d128-4bb4-81ee-e8439061963c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/edu/cnu/poker/EvaluatorTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/edu/cnu/poker/EvaluatorTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/edu/cnu/poker/Evaluator.java" afterPath="$PROJECT_DIR$/src/main/java/com/edu/cnu/poker/Evaluator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/edu/cnu/poker/EvaluatorTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/edu/cnu/poker/EvaluatorTest.java" />
     </list>
@@ -18,11 +16,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="EvaluatorTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EvaluatorTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/edu/cnu/poker/EvaluatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="136" column="48" lean-forward="false" selection-start-line="136" selection-start-column="48" selection-end-line="136" selection-end-column="48" />
+            <state relative-caret-position="522">
+              <caret line="149" column="53" lean-forward="true" selection-start-line="149" selection-start-column="53" selection-end-line="149" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -58,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Evaluator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Evaluator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/edu/cnu/poker/Evaluator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="112" column="21" lean-forward="true" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
+            <state relative-caret-position="598">
+              <caret line="122" column="29" lean-forward="false" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -88,8 +86,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/edu/cnu/poker/Evaluator.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/edu/cnu/poker/EvaluatorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/edu/cnu/poker/Evaluator.java" />
       </list>
     </option>
   </component>
@@ -195,33 +193,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EvaluatorTest.SUIT가_5개동일하고_숫자가_10_J_Q_K_A가_연달아있으면_로티플이다">
-    <configuration default="false" name="EvaluatorTest.숫자2개가_같으면_원페어다" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.edu.cnu.poker.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="poker" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.edu.cnu.poker" />
-      <option name="MAIN_CLASS_NAME" value="com.edu.cnu.poker.EvaluatorTest" />
-      <option name="METHOD_NAME" value="숫자2개가_같으면_원페어다" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.EvaluatorTest.아무런_패도_없으면_탑이다">
     <configuration default="false" name="EvaluatorTest.숫자가_같은카드가3장이면_트리플이다" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -313,6 +285,32 @@
       <option name="PACKAGE_NAME" value="com.edu.cnu.poker" />
       <option name="MAIN_CLASS_NAME" value="com.edu.cnu.poker.EvaluatorTest" />
       <option name="METHOD_NAME" value="SUIT가_5개동일하고_숫자가_10_J_Q_K_A가_연달아있으면_로티플이다" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="EvaluatorTest.아무런_패도_없으면_탑이다" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.edu.cnu.poker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="poker" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.edu.cnu.poker" />
+      <option name="MAIN_CLASS_NAME" value="com.edu.cnu.poker.EvaluatorTest" />
+      <option name="METHOD_NAME" value="아무런_패도_없으면_탑이다" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -531,19 +529,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.숫자2개가_같으면_원페어다" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.숫자가_같은카드가3장이면_트리플이다" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.숫자2개가_2번_같으면_투페어다" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.숫자2개가_1번_같고_숫자3개가_같으면_풀하우스다" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.SUIT가_5개동일하고_숫자가_10_J_Q_K_A가_연달아있으면_로티플이다" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.숫자가_같은카드가3장이면_트리플이다" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.숫자2개가_2번_같으면_투페어다" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.숫자2개가_1번_같고_숫자3개가_같으면_풀하우스다" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.SUIT가_5개동일하고_숫자가_10_J_Q_K_A가_연달아있으면_로티플이다" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.아무런_패도_없으면_탑이다" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.SUIT가_5개동일하고_숫자가_10_J_Q_K_A가_연달아있으면_로티플이다" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.숫자2개가_1번_같고_숫자3개가_같으면_풀하우스다" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.숫자2개가_2번_같으면_투페어다" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.숫자가_같은카드가3장이면_트리플이다" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.숫자2개가_같으면_원페어다" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.아무런_패도_없으면_탑이다" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.SUIT가_5개동일하고_숫자가_10_J_Q_K_A가_연달아있으면_로티플이다" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.숫자2개가_1번_같고_숫자3개가_같으면_풀하우스다" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.숫자2개가_2번_같으면_투페어다" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.EvaluatorTest.숫자가_같은카드가3장이면_트리플이다" />
       </list>
     </recent_temporary>
   </component>
@@ -561,9 +559,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EvaluatorTest_SUIT가_5개가동일하면_플러쉬다 - 2017.04.28 at 20h 41m 49s.xml">
-      <configuration name="EvaluatorTest.SUIT가_5개가동일하면_플러쉬다" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="EvaluatorTest_SUIT가_5개동일하고_숫자가_10_J_Q_K_A가_연달아있으면_로티플이다 - 2017.04.28 at 21h 50m 38s.xml">
       <configuration name="EvaluatorTest.SUIT가_5개동일하고_숫자가_10_J_Q_K_A가_연달아있으면_로티플이다" configurationId="JUnit" />
     </history-entry>
@@ -587,6 +582,12 @@
     </history-entry>
     <history-entry file="EvaluatorTest_숫자가_같은카드가3장이면_트리플이다 - 2017.04.28 at 20h 55m 33s.xml">
       <configuration name="EvaluatorTest.숫자가_같은카드가3장이면_트리플이다" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EvaluatorTest_아무런_패도_없으면_탑이다 - 2017.04.28 at 22h 30m 50s.xml">
+      <configuration name="EvaluatorTest.아무런_패도_없으면_탑이다" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EvaluatorTest_아무런_패도_없으면_탑이다 - 2017.04.28 at 22h 32m 18s.xml">
+      <configuration name="EvaluatorTest.아무런_패도_없으면_탑이다" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -675,18 +676,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/edu/cnu/poker/EvaluatorTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/edu/cnu/poker/Evaluator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="136" column="48" lean-forward="false" selection-start-line="136" selection-start-column="48" selection-end-line="136" selection-end-column="48" />
+        <state relative-caret-position="598">
+          <caret line="122" column="29" lean-forward="false" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/edu/cnu/poker/Evaluator.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/edu/cnu/poker/EvaluatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="112" column="21" lean-forward="true" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
+        <state relative-caret-position="522">
+          <caret line="149" column="53" lean-forward="true" selection-start-line="149" selection-start-column="53" selection-end-line="149" selection-end-column="53" />
           <folding />
         </state>
       </provider>
