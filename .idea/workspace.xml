@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8d710660-d128-4bb4-81ee-e8439061963c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/edu/cnu/poker/Evaluator.java" afterPath="$PROJECT_DIR$/src/main/java/com/edu/cnu/poker/Evaluator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/edu/cnu/poker/EvaluatorTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/edu/cnu/poker/EvaluatorTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,8 +58,8 @@
       <file leaf-file-name="Evaluator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/edu/cnu/poker/Evaluator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="122" column="29" lean-forward="false" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
+            <state relative-caret-position="480">
+              <caret line="121" column="19" lean-forward="false" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -568,9 +567,6 @@
     <history-entry file="EvaluatorTest_SUIT가_5개동일하고_숫자가_10_J_Q_K_A가_연달아있으면_로티플이다 - 2017.04.28 at 22h 13m 55s.xml">
       <configuration name="EvaluatorTest.SUIT가_5개동일하고_숫자가_10_J_Q_K_A가_연달아있으면_로티플이다" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EvaluatorTest_숫자2개가_1번_같고_숫자3개가_같으면_풀하우스다 - 2017.04.28 at 21h 06m 56s.xml">
-      <configuration name="EvaluatorTest.숫자2개가_1번_같고_숫자3개가_같으면_풀하우스다" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="EvaluatorTest_숫자2개가_2번_같으면_투페어다 - 2017.04.28 at 21h 01m 55s.xml">
       <configuration name="EvaluatorTest.숫자2개가_2번_같으면_투페어다" configurationId="JUnit" />
     </history-entry>
@@ -589,6 +585,9 @@
     <history-entry file="EvaluatorTest_아무런_패도_없으면_탑이다 - 2017.04.28 at 22h 32m 18s.xml">
       <configuration name="EvaluatorTest.아무런_패도_없으면_탑이다" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="EvaluatorTest_아무런_패도_없으면_탑이다 - 2017.04.28 at 22h 38m 44s.xml">
+      <configuration name="EvaluatorTest.아무런_패도_없으면_탑이다" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="2418" height="1318" extended-state="6" />
@@ -604,7 +603,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32938188" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32938188" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -678,8 +677,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/edu/cnu/poker/Evaluator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="122" column="29" lean-forward="false" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
+        <state relative-caret-position="480">
+          <caret line="121" column="19" lean-forward="false" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
           <folding />
         </state>
       </provider>

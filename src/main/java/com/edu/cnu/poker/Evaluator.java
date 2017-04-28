@@ -22,7 +22,6 @@ public class Evaluator {
         boolean sameRank = false;
         boolean firstWasTEN = false;
         boolean rotipleCheck = false;
-        boolean topCheck = false;
 
         for (Card card : cardList) {
             int cardOrder = 1; // 현재 몇번째 카드인지 구분하기 위함
@@ -93,8 +92,6 @@ public class Evaluator {
             }
             else if(o_count == 2){
                 return "TWO_PAIR";
-            } else {
-                topCheck = true;
             }
         }
 
@@ -119,11 +116,9 @@ public class Evaluator {
                 else {
                     return "FLUSH";
                 }
-            } else if(topCheck) {
-                return "TOP";
             }
         }
         
-        return "NOTHING";
+        return "TOP";
     }
 }
