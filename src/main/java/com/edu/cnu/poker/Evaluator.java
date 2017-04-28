@@ -62,22 +62,27 @@ public class Evaluator {
 
         }
         for(Integer rank : tempMap2.keySet()){
-            Integer count = 0; //원페어의 갯수
+            Integer o_count = 0; //원페어의 갯수
+            boolean isTRIPLE = false; //트리플 여부
             for(Integer rank2 : tempMap2.keySet()) {//원페어들의 갯수를 체크
                 if (tempMap2.get(rank2) == 2) {
-                    count++;
+                    o_count++;
+                }
+                else if (tempMap2.get(rank2) == 3) {//트리플 여부 체크
+                    isTRIPLE = true;
                 }
             }
-            if (tempMap2.get(rank) == 3) {
-                return "TRIPLE";
+            if (isTRIPLE) {
+                if (o_count == 1){
+                    return "FULL_HOUSE";
+                }
+                else
+                    return "TRIPLE";
             }
             else if(tempMap2.get(rank) == 4){
                 return "FOUR_CARD";
             }
-            else if(count == 1){
-                return "ONE_PAIR";
-            }
-            else if(count == 2){
+            else if(o_count == 2){
                 return "TWO_PAIR";
             }
         }
