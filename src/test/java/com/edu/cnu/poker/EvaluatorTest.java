@@ -67,4 +67,19 @@ public class EvaluatorTest {
         String result = evaluator.evaluate(cardList);
         assertThat(result, is("FLUSH"));
     }
+
+    @Test
+    public void 숫자4개가_같으면_포카드다() {
+        Evaluator evaluator = new Evaluator();
+        List<Card> cardList = Arrays.asList(
+                new Card(4,Suit.CLUBS),
+                new Card(4,Suit.SPADES),
+                new Card(5,Suit.DIAMONDS),
+                new Card(4,Suit.HEARTS),
+                new Card(4,Suit.DIAMONDS)
+        );
+        String result = evaluator.evaluate(cardList);
+        assertThat(result, is("FOUR_CARD"));
+    }
+
 }
