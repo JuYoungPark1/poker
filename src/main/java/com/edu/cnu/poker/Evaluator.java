@@ -60,6 +60,9 @@ public class Evaluator {
             if (tempMap.size() == 3 && sameRank) {
                 return "TRIPLE";
             }
+            else if(tempMap.size() == 4 && sameRank){
+                return "FOUR_CARD";
+            }
 
             // FLUSH 검사 부분에서 incrementRank가 5, 첫 Rank가 A 일시 백 스트레이트 플러시
             // 아닌 경우 스트레이트 플러시, 그것도 아니면 일반 플러시로 return함.
