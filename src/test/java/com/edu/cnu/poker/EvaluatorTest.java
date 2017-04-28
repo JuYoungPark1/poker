@@ -82,4 +82,20 @@ public class EvaluatorTest {
         assertThat(result, is("FOUR_CARD"));
     }
 
+    @Test
+    public void 숫자2개가_같으면_원페어다() {
+        Evaluator evaluator = new Evaluator();
+        List<Card> cardList = Arrays.asList(
+                new Card(4,Suit.CLUBS),
+                new Card(4,Suit.SPADES),
+                new Card(5,Suit.DIAMONDS),
+                new Card(6,Suit.HEARTS),
+                new Card(7,Suit.DIAMONDS)
+        );
+        String result = evaluator.evaluate(cardList);
+        assertThat(result, is("ONE_PAIR"));
+    }
+
+
+
 }

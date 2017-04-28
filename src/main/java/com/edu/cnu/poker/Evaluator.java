@@ -14,6 +14,7 @@ import static com.edu.cnu.poker.Suit.DIAMONDS;
 public class Evaluator {
     public String evaluate(List<Card> cardList) {
         Map<Suit, Integer> tempMap = new HashMap<Suit, Integer>();
+        Map<Integer, Integer> tempMap2 = new HashMap<Integer, Integer>();
         int continuousRank = 1;
         int incrementRank = 1;
         int beforeRank = 0;
@@ -30,6 +31,13 @@ public class Evaluator {
                 sameRank = true;
             } else {
                 sameRank = false;
+            }
+            if (tempMap2.containsKey(card.getRank())){
+                Integer count = tempMap2.get(card.getRank());
+                count = new Integer(count.intValue() + 1);
+                tempMap2.put(card.getRank(), count);
+            }else {
+                tempMap2.put(card.getRank(), new Integer(1));
             }
 
             if (tempMap.containsKey(card.getSuit())) {
@@ -53,16 +61,21 @@ public class Evaluator {
             }
 
         }
-
+        for(Integer rank : tempMap2.keySet()){
+            if (tempMap2.get(rank) == 3) {
+                return "TRIPLE";
+            }
+            else if(tempMap2.get(rank) == 4){
+                return "FOUR_CARD";
+            }
+            else if(tempMap2.get(rank) == 2){
+                return "ONE_PAIR";
+            }
+        }
 
         for (Suit key : tempMap.keySet()) {
             // 세개의 카드를 확인하고 이들이 동일한 Rank를 가졌을 때 TRIPLE return.
-            if (tempMap.size() == 3 && sameRank) {
-                return "TRIPLE";
-            }
-            else if(tempMap.size() == 4 && sameRank){
-                return "FOUR_CARD";
-            }
+
 
             // FLUSH 검사 부분에서 incrementRank가 5, 첫 Rank가 A 일시 백 스트레이트 플러시
             // 아닌 경우 스트레이트 플러시, 그것도 아니면 일반 플러시로 return함.
