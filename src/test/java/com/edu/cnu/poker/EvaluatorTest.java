@@ -167,9 +167,9 @@ public class EvaluatorTest {
     public void 숫자가_A부터시작돼_연속되면_백스트레이트이다(){
         Evaluator evaluator = new Evaluator();
         List<Card> cardList = Arrays.asList(
-                new Card(1, Suit.DIAMONDS),
+                new Card(3, Suit.DIAMONDS),
                 new Card(2, Suit.SPADES),
-                new Card(3, Suit.HEARTS),
+                new Card(1, Suit.HEARTS),
                 new Card(4, Suit.SPADES),
                 new Card(5, Suit.CLUBS)
         );
