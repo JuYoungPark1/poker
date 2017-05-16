@@ -9,44 +9,19 @@ import static com.edu.cnu.poker.Suit.DIAMONDS;
 /**
  * Created by cse on 2017-04-17.
  */
+
+
 public class Evaluator {
+    Map<Suit, Integer> tempMap;
+    Map<Integer, Integer> tempMap2;
+    boolean isFLUSH;
+    int before_Card_Rank;
+    int isMOUNTAIN;
+
     public String evaluate(List<Card> cardList) {
-        Map<Suit, Integer> tempMap = new HashMap<Suit, Integer>();
-        Map<Integer, Integer> tempMap2 = new HashMap<Integer, Integer>();
-        boolean isFLUSH=false;
-        Collections.sort(cardList);
-        int before_Card_Rank=cardList.get(0).getRank()-1;
-        int isMOUNTAIN = cardList.get(4).getRank()-cardList.get(0).getRank();
 
-        if(isMOUNTAIN==12){
-            cardList.get(0).setRank(14);
-            Collections.sort(cardList);
-            before_Card_Rank=cardList.get(0).getRank()-1;
-        }
-
-        for (Card card : cardList) {
-            if (tempMap2.containsKey(card.getRank())){ //카드들의 숫자별로 갯수를 저장
-                Integer count = tempMap2.get(card.getRank());
-                count = new Integer(count.intValue() + 1);
-                tempMap2.put(card.getRank(), count);
-            }else {
-                tempMap2.put(card.getRank(), new Integer(1));
-            }
-            if (tempMap.containsKey(card.getSuit())) {
-                Integer count = tempMap.get(card.getSuit());
-                count = new Integer(count.intValue() + 1);
-                tempMap.put(card.getSuit(), count);
-            } else {
-                tempMap.put(card.getSuit(), new Integer(1));
-            }
-        }
-
-
-        for (Suit key : tempMap.keySet()) {
-            if (tempMap.get(key) == 5) {
-                isFLUSH=true;
-            }
-        }
+        startInitialValue(cardList);
+        cardSetting(cardList);
 
         for(int i=0; i<cardList.size(); i++){
             if((cardList.get(i).getRank()-before_Card_Rank==1) && tempMap2.size()==5){
@@ -111,5 +86,44 @@ public class Evaluator {
             return "FLUSH";
         }
         return "TOP";
+    }
+
+    private void startInitialValue(List<Card> cardList) {
+        tempMap = new HashMap<Suit, Integer>();
+        tempMap2 = new HashMap<Integer, Integer>();
+        isFLUSH=false;
+        Collections.sort(cardList);
+        before_Card_Rank=cardList.get(0).getRank()-1;
+        isMOUNTAIN = cardList.get(4).getRank()-cardList.get(0).getRank();
+        if(isMOUNTAIN==12){
+            cardList.get(0).setRank(14);
+            Collections.sort(cardList);
+            before_Card_Rank=cardList.get(0).getRank()-1;
+        }
+    }
+
+    private void cardSetting(List<Card> cardList) {
+        for (Card card : cardList) {
+            if (tempMap2.containsKey(card.getRank())){ //카드들의 숫자별로 갯수를 저장
+                Integer count = tempMap2.get(card.getRank());
+                count = new Integer(count.intValue() + 1);
+                tempMap2.put(card.getRank(), count);
+            }else {
+                tempMap2.put(card.getRank(), new Integer(1));
+            }
+            if (tempMap.containsKey(card.getSuit())) {
+                Integer count = tempMap.get(card.getSuit());
+                count = new Integer(count.intValue() + 1);
+                tempMap.put(card.getSuit(), count);
+            } else {
+                tempMap.put(card.getSuit(), new Integer(1));
+            }
+        }
+
+        for (Suit key : tempMap.keySet()) {
+            if (tempMap.get(key) == 5) {
+                isFLUSH=true;
+            }
+        }
     }
 }
